@@ -15,11 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // If this scene's self.window is nil then set a new UIWindow object to it.
-        window = self.window ?? UIWindow(frame: UIScreen.main.bounds)
-        
-        let vc = VimeoTabController()
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
+//        window = self.window ?? UIWindow(frame: UIScreen.main.bounds)
+//        
+//        let vc = VimeoTabController()
+//        window?.rootViewController = vc
+//        window?.makeKeyAndVisible()
 
         guard let _ = (scene as? UIWindowScene) else { return }
     }

@@ -31,7 +31,20 @@
 		040E991D248A78BC007AF099 /* TableViewGenericCellsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E991C248A78BC007AF099 /* TableViewGenericCellsExtension.swift */; };
 		04369E16248FD97D0042C0C6 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */; };
 		04369E17248FD97D0042C0C6 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */; };
-		04E9D9CF248F9542008D92E7 /* VimeoTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D9CE248F9542008D92E7 /* VimeoTabbarVC.swift */; };
+		04369E1A2490A4500042C0C6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E192490A4500042C0C6 /* Route.swift */; };
+		04369E1B2490A4500042C0C6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E192490A4500042C0C6 /* Route.swift */; };
+		04369E1E2490B0FD0042C0C6 /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E1C2490B0FD0042C0C6 /* VideoInfoViewController.swift */; };
+		04369E1F2490B0FD0042C0C6 /* VideoInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04369E1D2490B0FD0042C0C6 /* VideoInfoViewController.xib */; };
+		04369E222490B2FB0042C0C6 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E212490B2FB0042C0C6 /* PlayerView.swift */; };
+		04369E232490B2FB0042C0C6 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E212490B2FB0042C0C6 /* PlayerView.swift */; };
+		04369E272490D60D0042C0C6 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E262490D60D0042C0C6 /* IntExtension.swift */; };
+		04369E282490D60D0042C0C6 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E262490D60D0042C0C6 /* IntExtension.swift */; };
+		04369E292490D9F90042C0C6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D9F7248F9EFF008D92E7 /* CategoryCell.swift */; };
+		04369E312490DBFD0042C0C6 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04369E302490DBFD0042C0C6 /* CategoryCell.xib */; };
+		04369E332490DD350042C0C6 /* VideosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DA00248FC893008D92E7 /* VideosCollectionViewController.swift */; };
+		04369E342490DD4E0042C0C6 /* VideoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DA04248FCBAD008D92E7 /* VideoCollectionCell.swift */; };
+		04369E3C2490FBC50042C0C6 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E3A2490FBC50042C0C6 /* SearchController.swift */; };
+		04369E3D2490FBC50042C0C6 /* SearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04369E3B2490FBC50042C0C6 /* SearchController.xib */; };
 		04E9D9D1248F95E7008D92E7 /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E9D9D0248F95E7008D92E7 /* CommonAssets.xcassets */; };
 		04E9D9D2248F95E7008D92E7 /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E9D9D0248F95E7008D92E7 /* CommonAssets.xcassets */; };
 		04E9D9D3248F95EC008D92E7 /* VimeoTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D9CE248F9542008D92E7 /* VimeoTabbarVC.swift */; };
@@ -50,6 +63,12 @@
 		04E9DA07248FCBAD008D92E7 /* VideoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9DA05248FCBAD008D92E7 /* VideoCollectionCell.xib */; };
 		04E9DA0A248FD334008D92E7 /* VCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DA09248FD334008D92E7 /* VCExtension.swift */; };
 		04E9DA0B248FD334008D92E7 /* VCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DA09248FD334008D92E7 /* VCExtension.swift */; };
+		04F071192491036700E93B6D /* VideoSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F071182491036700E93B6D /* VideoSearchModel.swift */; };
+		04F0711A2491036700E93B6D /* VideoSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F071182491036700E93B6D /* VideoSearchModel.swift */; };
+		3D357F96FCE7DD0B4ED968D4 /* Pods_VimeoClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2422BDFE6608D90591F4B8E4 /* Pods_VimeoClient.framework */; };
+		B2EB896530E7AEDA3184DB62 /* Pods_tvOSClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E2C42D456C5820E69F804D /* Pods_tvOSClientTests.framework */; };
+		CF3C6CD8101142485B97BB75 /* Pods_tvOSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526B87ED5C89FACCC63955CE /* Pods_tvOSClient.framework */; };
+		FEE167ACC7083D0641ACB395 /* Pods_VimeoClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08B92D48A4A436689915B5B /* Pods_VimeoClientTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +117,14 @@
 		040E991A248A4C05007AF099 /* ErrorStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStructure.swift; sourceTree = "<group>"; };
 		040E991C248A78BC007AF099 /* TableViewGenericCellsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewGenericCellsExtension.swift; sourceTree = "<group>"; };
 		04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		04369E192490A4500042C0C6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		04369E1C2490B0FD0042C0C6 /* VideoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
+		04369E1D2490B0FD0042C0C6 /* VideoInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoInfoViewController.xib; sourceTree = "<group>"; };
+		04369E212490B2FB0042C0C6 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		04369E262490D60D0042C0C6 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		04369E302490DBFD0042C0C6 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		04369E3A2490FBC50042C0C6 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		04369E3B2490FBC50042C0C6 /* SearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchController.xib; sourceTree = "<group>"; };
 		04E9D9CE248F9542008D92E7 /* VimeoTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoTabbarVC.swift; sourceTree = "<group>"; };
 		04E9D9D0248F95E7008D92E7 /* CommonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonAssets.xcassets; sourceTree = "<group>"; };
 		04E9D9F3248F9EE6008D92E7 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +137,19 @@
 		04E9DA04248FCBAD008D92E7 /* VideoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionCell.swift; sourceTree = "<group>"; };
 		04E9DA05248FCBAD008D92E7 /* VideoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionCell.xib; sourceTree = "<group>"; };
 		04E9DA09248FD334008D92E7 /* VCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExtension.swift; sourceTree = "<group>"; };
+		04F071182491036700E93B6D /* VideoSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSearchModel.swift; sourceTree = "<group>"; };
+		085C1932D26470370D1A73B9 /* Pods-tvOSClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSClientTests.debug.xcconfig"; path = "Target Support Files/Pods-tvOSClientTests/Pods-tvOSClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2422BDFE6608D90591F4B8E4 /* Pods_VimeoClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VimeoClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		526B87ED5C89FACCC63955CE /* Pods_tvOSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B434D998872A2AA556D9A67 /* Pods-VimeoClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimeoClient.debug.xcconfig"; path = "Target Support Files/Pods-VimeoClient/Pods-VimeoClient.debug.xcconfig"; sourceTree = "<group>"; };
+		73DB6CDD05EA8D8514D3073E /* Pods-tvOSClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSClient.release.xcconfig"; path = "Target Support Files/Pods-tvOSClient/Pods-tvOSClient.release.xcconfig"; sourceTree = "<group>"; };
+		7CD6D9F5DC0ABBC0CCBBFDB9 /* Pods-VimeoClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimeoClientTests.debug.xcconfig"; path = "Target Support Files/Pods-VimeoClientTests/Pods-VimeoClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8854CD07A37224E30826C011 /* Pods-tvOSClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSClientTests.release.xcconfig"; path = "Target Support Files/Pods-tvOSClientTests/Pods-tvOSClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		96E2C42D456C5820E69F804D /* Pods_tvOSClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOSClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6AAC8CF483678CC5E38DA23 /* Pods-tvOSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSClient.debug.xcconfig"; path = "Target Support Files/Pods-tvOSClient/Pods-tvOSClient.debug.xcconfig"; sourceTree = "<group>"; };
+		B08B92D48A4A436689915B5B /* Pods_VimeoClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VimeoClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6DE1AC1F71FE3524438EA79 /* Pods-VimeoClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimeoClientTests.release.xcconfig"; path = "Target Support Files/Pods-VimeoClientTests/Pods-VimeoClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		F28332B8FF53EB4C8EBFC5C3 /* Pods-VimeoClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimeoClient.release.xcconfig"; path = "Target Support Files/Pods-VimeoClient/Pods-VimeoClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D357F96FCE7DD0B4ED968D4 /* Pods_VimeoClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEE167ACC7083D0641ACB395 /* Pods_VimeoClientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3C6CD8101142485B97BB75 /* Pods_tvOSClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2EB896530E7AEDA3184DB62 /* Pods_tvOSClientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +200,7 @@
 				040E9902248A1D7D007AF099 /* tvOSClientTests */,
 				040E98BE248A1C07007AF099 /* Products */,
 				25C92F758DE95D093C3E8C66 /* Pods */,
+				EDDB69411ECE05C4EF113691 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +218,7 @@
 		040E98BF248A1C07007AF099 /* VimeoClient */ = {
 			isa = PBXGroup;
 			children = (
+				04369E2C2490DBB60042C0C6 /* Categories */,
 				040E98C0248A1C07007AF099 /* AppDelegate.swift */,
 				040E98C2248A1C07007AF099 /* SceneDelegate.swift */,
 				040E98C4248A1C07007AF099 /* ViewController.swift */,
@@ -197,6 +243,9 @@
 		040E98EA248A1D7B007AF099 /* tvOSClient */ = {
 			isa = PBXGroup;
 			children = (
+				04369E352490FB810042C0C6 /* Search */,
+				04369E242490BCE20042C0C6 /* PlayerController */,
+				04369E182490A4030042C0C6 /* VideoInfo */,
 				04E9D9FF248FC863008D92E7 /* VideosCollection */,
 				04E9D9E8248F9C87008D92E7 /* Categories */,
 				040E98EB248A1D7B007AF099 /* AppDelegate.swift */,
@@ -220,6 +269,7 @@
 		040E990C248A1E9F007AF099 /* VideoModel */ = {
 			isa = PBXGroup;
 			children = (
+				04F071172491035200E93B6D /* VideoSearch */,
 				04E9D9FB248FA50B008D92E7 /* CategoryModels */,
 				040E9919248A4BF3007AF099 /* ErrorDesign */,
 				040E9913248A211D007AF099 /* MP4Extractor */,
@@ -246,12 +296,89 @@
 			path = ErrorDesign;
 			sourceTree = "<group>";
 		};
-		04E9D9CD248F950E008D92E7 /* CommonUI */ = {
+		04369E182490A4030042C0C6 /* VideoInfo */ = {
+			isa = PBXGroup;
+			children = (
+				04369E1C2490B0FD0042C0C6 /* VideoInfoViewController.swift */,
+				04369E1D2490B0FD0042C0C6 /* VideoInfoViewController.xib */,
+			);
+			path = VideoInfo;
+			sourceTree = "<group>";
+		};
+		04369E202490B2E70042C0C6 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				04369E212490B2FB0042C0C6 /* PlayerView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		04369E242490BCE20042C0C6 /* PlayerController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PlayerController;
+			sourceTree = "<group>";
+		};
+		04369E252490C3950042C0C6 /* ViewCommentsLikes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewCommentsLikes;
+			sourceTree = "<group>";
+		};
+		04369E2B2490DB890042C0C6 /* Tabbars */ = {
 			isa = PBXGroup;
 			children = (
 				04E9D9CE248F9542008D92E7 /* VimeoTabbarVC.swift */,
-				04E9D9D0248F95E7008D92E7 /* CommonAssets.xcassets */,
+			);
+			path = Tabbars;
+			sourceTree = "<group>";
+		};
+		04369E2C2490DBB60042C0C6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				04369E2D2490DBBE0042C0C6 /* Cell */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		04369E2D2490DBBE0042C0C6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04369E302490DBFD0042C0C6 /* CategoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		04369E322490DD130042C0C6 /* VideoCollectionController */ = {
+			isa = PBXGroup;
+			children = (
+				04E9DA00248FC893008D92E7 /* VideosCollectionViewController.swift */,
+				04E9DA04248FCBAD008D92E7 /* VideoCollectionCell.swift */,
+			);
+			path = VideoCollectionController;
+			sourceTree = "<group>";
+		};
+		04369E352490FB810042C0C6 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				04369E3A2490FBC50042C0C6 /* SearchController.swift */,
+				04369E3B2490FBC50042C0C6 /* SearchController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		04E9D9CD248F950E008D92E7 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				04369E2B2490DB890042C0C6 /* Tabbars */,
+				04369E252490C3950042C0C6 /* ViewCommentsLikes */,
+				04369E202490B2E70042C0C6 /* Player */,
+				04369E322490DD130042C0C6 /* VideoCollectionController */,
 				04E9D9DD248F9A9F008D92E7 /* Categories */,
+				04369E192490A4500042C0C6 /* Route.swift */,
+				04E9D9D0248F95E7008D92E7 /* CommonAssets.xcassets */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -259,6 +386,7 @@
 		04E9D9DD248F9A9F008D92E7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				04E9D9F7248F9EFF008D92E7 /* CategoryCell.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -268,7 +396,6 @@
 			children = (
 				04E9D9F3248F9EE6008D92E7 /* CategoriesViewController.swift */,
 				04E9D9F4248F9EE6008D92E7 /* CategoriesViewController.xib */,
-				04E9D9F7248F9EFF008D92E7 /* CategoryCell.swift */,
 				04E9D9F8248F9EFF008D92E7 /* CategoryCell.xib */,
 			);
 			path = Categories;
@@ -285,9 +412,7 @@
 		04E9D9FF248FC863008D92E7 /* VideosCollection */ = {
 			isa = PBXGroup;
 			children = (
-				04E9DA00248FC893008D92E7 /* VideosCollectionViewController.swift */,
 				04E9DA01248FC893008D92E7 /* VideosCollectionViewController.xib */,
-				04E9DA04248FCBAD008D92E7 /* VideoCollectionCell.swift */,
 				04E9DA05248FCBAD008D92E7 /* VideoCollectionCell.xib */,
 			);
 			path = VideosCollection;
@@ -299,15 +424,43 @@
 				040E991C248A78BC007AF099 /* TableViewGenericCellsExtension.swift */,
 				04E9DA09248FD334008D92E7 /* VCExtension.swift */,
 				04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */,
+				04369E262490D60D0042C0C6 /* IntExtension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		04F071172491035200E93B6D /* VideoSearch */ = {
+			isa = PBXGroup;
+			children = (
+				04F071182491036700E93B6D /* VideoSearchModel.swift */,
+			);
+			path = VideoSearch;
 			sourceTree = "<group>";
 		};
 		25C92F758DE95D093C3E8C66 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				5B434D998872A2AA556D9A67 /* Pods-VimeoClient.debug.xcconfig */,
+				F28332B8FF53EB4C8EBFC5C3 /* Pods-VimeoClient.release.xcconfig */,
+				7CD6D9F5DC0ABBC0CCBBFDB9 /* Pods-VimeoClientTests.debug.xcconfig */,
+				B6DE1AC1F71FE3524438EA79 /* Pods-VimeoClientTests.release.xcconfig */,
+				A6AAC8CF483678CC5E38DA23 /* Pods-tvOSClient.debug.xcconfig */,
+				73DB6CDD05EA8D8514D3073E /* Pods-tvOSClient.release.xcconfig */,
+				085C1932D26470370D1A73B9 /* Pods-tvOSClientTests.debug.xcconfig */,
+				8854CD07A37224E30826C011 /* Pods-tvOSClientTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EDDB69411ECE05C4EF113691 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2422BDFE6608D90591F4B8E4 /* Pods_VimeoClient.framework */,
+				B08B92D48A4A436689915B5B /* Pods_VimeoClientTests.framework */,
+				526B87ED5C89FACCC63955CE /* Pods_tvOSClient.framework */,
+				96E2C42D456C5820E69F804D /* Pods_tvOSClientTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,9 +470,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040E98DF248A1C09007AF099 /* Build configuration list for PBXNativeTarget "VimeoClient" */;
 			buildPhases = (
+				570C7CB7538B23F5ADFD03C8 /* [CP] Check Pods Manifest.lock */,
 				040E98B9248A1C07007AF099 /* Sources */,
 				040E98BA248A1C07007AF099 /* Frameworks */,
 				040E98BB248A1C07007AF099 /* Resources */,
+				24E704C21478911B6BF8460B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -334,6 +489,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040E98E2248A1C09007AF099 /* Build configuration list for PBXNativeTarget "VimeoClientTests" */;
 			buildPhases = (
+				191DC9DDC846C026A369A08E /* [CP] Check Pods Manifest.lock */,
 				040E98D2248A1C09007AF099 /* Sources */,
 				040E98D3248A1C09007AF099 /* Frameworks */,
 				040E98D4248A1C09007AF099 /* Resources */,
@@ -352,9 +508,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040E990A248A1D7D007AF099 /* Build configuration list for PBXNativeTarget "tvOSClient" */;
 			buildPhases = (
+				BF6546B4452082DB61F4030A /* [CP] Check Pods Manifest.lock */,
 				040E98E5248A1D7B007AF099 /* Sources */,
 				040E98E6248A1D7B007AF099 /* Frameworks */,
 				040E98E7248A1D7B007AF099 /* Resources */,
+				D74E6A33BCCBB6500072F953 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,6 +527,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040E990B248A1D7D007AF099 /* Build configuration list for PBXNativeTarget "tvOSClientTests" */;
 			buildPhases = (
+				2185C6FCE4A0BB2BBE709454 /* [CP] Check Pods Manifest.lock */,
 				040E98FB248A1D7D007AF099 /* Sources */,
 				040E98FC248A1D7D007AF099 /* Frameworks */,
 				040E98FD248A1D7D007AF099 /* Resources */,
@@ -435,6 +594,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04369E312490DBFD0042C0C6 /* CategoryCell.xib in Resources */,
 				040E98D0248A1C09007AF099 /* LaunchScreen.storyboard in Resources */,
 				04E9D9D1248F95E7008D92E7 /* CommonAssets.xcassets in Resources */,
 				040E98CD248A1C09007AF099 /* Assets.xcassets in Resources */,
@@ -459,6 +619,8 @@
 				04E9D9F6248F9EE6008D92E7 /* CategoriesViewController.xib in Resources */,
 				04E9DA07248FCBAD008D92E7 /* VideoCollectionCell.xib in Resources */,
 				04E9DA03248FC893008D92E7 /* VideosCollectionViewController.xib in Resources */,
+				04369E1F2490B0FD0042C0C6 /* VideoInfoViewController.xib in Resources */,
+				04369E3D2490FBC50042C0C6 /* SearchController.xib in Resources */,
 				040E98F6248A1D7D007AF099 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +634,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		191DC9DDC846C026A369A08E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VimeoClientTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2185C6FCE4A0BB2BBE709454 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tvOSClientTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24E704C21478911B6BF8460B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VimeoClient/Pods-VimeoClient-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VimeoClient/Pods-VimeoClient-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VimeoClient/Pods-VimeoClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		570C7CB7538B23F5ADFD03C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VimeoClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF6546B4452082DB61F4030A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tvOSClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D74E6A33BCCBB6500072F953 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tvOSClient/Pods-tvOSClient-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tvOSClient/Pods-tvOSClient-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvOSClient/Pods-tvOSClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		040E98B9248A1C07007AF099 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -480,17 +767,23 @@
 				040E9915248A2144007AF099 /* APICredits.swift in Sources */,
 				040E9911248A1EB8007AF099 /* HCVimeoVideoExtractor.swift in Sources */,
 				040E9917248A4931007AF099 /* MP4ExtensionForVimeo.swift in Sources */,
+				04369E222490B2FB0042C0C6 /* PlayerView.swift in Sources */,
+				04369E1A2490A4500042C0C6 /* Route.swift in Sources */,
+				04369E292490D9F90042C0C6 /* CategoryCell.swift in Sources */,
 				040E990F248A1EB8007AF099 /* HCVimeoVideo.swift in Sources */,
-				04E9D9CF248F9542008D92E7 /* VimeoTabbarVC.swift in Sources */,
 				040E98C5248A1C07007AF099 /* ViewController.swift in Sources */,
+				04369E342490DD4E0042C0C6 /* VideoCollectionCell.swift in Sources */,
 				040E991B248A4C05007AF099 /* ErrorStructure.swift in Sources */,
 				040E98C1248A1C07007AF099 /* AppDelegate.swift in Sources */,
 				04369E16248FD97D0042C0C6 /* ImageViewExtension.swift in Sources */,
 				040E991D248A78BC007AF099 /* TableViewGenericCellsExtension.swift in Sources */,
+				04369E272490D60D0042C0C6 /* IntExtension.swift in Sources */,
 				040E98C3248A1C07007AF099 /* SceneDelegate.swift in Sources */,
 				04E9D9FD248FA525008D92E7 /* CategoriesViewModel.swift in Sources */,
 				04E9DA0A248FD334008D92E7 /* VCExtension.swift in Sources */,
+				04369E332490DD350042C0C6 /* VideosCollectionViewController.swift in Sources */,
 				040E98CB248A1C07007AF099 /* VimeoClient.xcdatamodeld in Sources */,
+				04F071192491036700E93B6D /* VideoSearchModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,12 +808,18 @@
 				04E9DA06248FCBAD008D92E7 /* VideoCollectionCell.swift in Sources */,
 				04E9D9F5248F9EE6008D92E7 /* CategoriesViewController.swift in Sources */,
 				040E98EC248A1D7B007AF099 /* AppDelegate.swift in Sources */,
+				04369E1B2490A4500042C0C6 /* Route.swift in Sources */,
+				04369E3C2490FBC50042C0C6 /* SearchController.swift in Sources */,
 				040E98F4248A1D7B007AF099 /* tvOSClient.xcdatamodeld in Sources */,
 				04E9D9D6248F970D008D92E7 /* TableViewGenericCellsExtension.swift in Sources */,
+				04369E1E2490B0FD0042C0C6 /* VideoInfoViewController.swift in Sources */,
+				04369E282490D60D0042C0C6 /* IntExtension.swift in Sources */,
 				040E9910248A1EB8007AF099 /* HCVimeoVideo.swift in Sources */,
 				04E9D9D3248F95EC008D92E7 /* VimeoTabbarVC.swift in Sources */,
 				04E9D9FE248FA525008D92E7 /* CategoriesViewModel.swift in Sources */,
 				04369E17248FD97D0042C0C6 /* ImageViewExtension.swift in Sources */,
+				04F0711A2491036700E93B6D /* VideoSearchModel.swift in Sources */,
+				04369E232490B2FB0042C0C6 /* PlayerView.swift in Sources */,
 				04E9D9F9248F9EFF008D92E7 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,6 +991,7 @@
 		};
 		040E98E0248A1C09007AF099 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B434D998872A2AA556D9A67 /* Pods-VimeoClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -709,6 +1009,7 @@
 		};
 		040E98E1248A1C09007AF099 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F28332B8FF53EB4C8EBFC5C3 /* Pods-VimeoClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -726,6 +1027,7 @@
 		};
 		040E98E3248A1C09007AF099 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CD6D9F5DC0ABBC0CCBBFDB9 /* Pods-VimeoClientTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -747,6 +1049,7 @@
 		};
 		040E98E4248A1C09007AF099 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6DE1AC1F71FE3524438EA79 /* Pods-VimeoClientTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -768,6 +1071,7 @@
 		};
 		040E9906248A1D7D007AF099 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6AAC8CF483678CC5E38DA23 /* Pods-tvOSClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_STYLE = Automatic;
@@ -787,6 +1091,7 @@
 		};
 		040E9907248A1D7D007AF099 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73DB6CDD05EA8D8514D3073E /* Pods-tvOSClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_STYLE = Automatic;
@@ -806,6 +1111,7 @@
 		};
 		040E9908248A1D7D007AF099 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 085C1932D26470370D1A73B9 /* Pods-tvOSClientTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -828,6 +1134,7 @@
 		};
 		040E9909248A1D7D007AF099 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8854CD07A37224E30826C011 /* Pods-tvOSClientTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

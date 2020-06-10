@@ -15,14 +15,14 @@ protocol CategoriesVCInterface {
     func handle(error: AppError)
 }
 
-class CategoriesViewController: UIViewController {
+class CategoriesViewController<CollectionView: VideoCollectionInterface>: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var containerForVideo: UIView!
     
     private var categories: [VIMCategory] = []
     private let viewModel = CategoriesViewModel()
-    private let collecctionVC = VideosCollectionViewController()
+    private let collecctionVC: CollectionView = CollectionView()
     
     init() {
         super.init(nibName: Self.identifier, bundle: nil)
@@ -53,6 +53,27 @@ class CategoriesViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: - UITableViewDelegate.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = categories[indexPath.row]
+        didSelect(category: model)
+        
+    }
+    
+    //MARK: - UITableViewDataSource.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        categories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(cellClass: CategoryCell.self)
+        cell.config(category: categories[indexPath.row])
+        return cell
+    }
+    
+    
 }
 
 //MARK: - Main interface.
@@ -85,30 +106,10 @@ extension CategoriesViewController: CategoriesVCInterface {
 }
 
 //MARK: - VideoSelectDelegate, Collection delegate.
-extension CategoriesViewController: VideoSelectDelegate {
+extension CategoriesViewController: VideoSelectDelegate, VideoDetailsRoute {
     func didSelect(video: VIMVideo) {
-        print(video.likesCount())
+        openVideo(video: video)
     }
 }
 
-//MARK: - UITableViewDelegate.
-extension CategoriesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = categories[indexPath.row]
-        didSelect(category: model)
-    }
-}
 
-//MARK: - UITableViewDataSource.
-extension CategoriesViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        categories.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cellClass: CategoryCell.self)
-        cell.config(category: categories[indexPath.row])
-        return cell
-    }
-    
-}

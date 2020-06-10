@@ -9,6 +9,10 @@
 import UIKit
 public extension UIViewController {
     static var identifier: String {
+        let name = String(describing: self)
+        if let className = name.split(separator: "<").first {
+            return String(className)
+        }
         return String(describing: self)
     }
 }

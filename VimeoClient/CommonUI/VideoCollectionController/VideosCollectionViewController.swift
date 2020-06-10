@@ -13,9 +13,17 @@ protocol VideoSelectDelegate {
     func didSelect(video: VIMVideo)
 }
 
-protocol VideoCollectionInterface {
+protocol VideoCollectionInterface: UIViewController {
+    init()
     func update(for videos: [VIMVideo])
     func didSelect(video: VIMVideo)
+    var delegate: VideoSelectDelegate? { get set }
+}
+
+extension VideoCollectionInterface {
+    func didSelect(video: VIMVideo) {
+        delegate?.didSelect(video: video)
+    }
 }
 
 class VideosCollectionViewController: UIViewController {
@@ -25,7 +33,7 @@ class VideosCollectionViewController: UIViewController {
     private var videos: [VIMVideo] = []
     var delegate: VideoSelectDelegate?
     
-    init() {
+    required init() {
         super.init(nibName: Self.identifier, bundle: nil)
     }
     
@@ -45,10 +53,6 @@ extension VideosCollectionViewController: VideoCollectionInterface {
     func update(for videos: [VIMVideo]) {
         self.videos = videos
         collectionView.reloadData()
-    }
-    
-    func didSelect(video: VIMVideo) {
-        delegate?.didSelect(video: video)
     }
 }
 
