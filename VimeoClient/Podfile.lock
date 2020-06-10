@@ -1,0 +1,16 @@
+PODS:
+  - VimeoNetworking (4.1.0)
+
+DEPENDENCIES:
+  - VimeoNetworking
+
+SPEC REPOS:
+  trunk:
+    - VimeoNetworking
+
+SPEC CHECKSUMS:
+  VimeoNetworking: faca97d7b158a74d96afb460011e2dc69651c051
+
+PODFILE CHECKSUM: 46377b1295d99f0fd68f610d8100613626654ff6
+
+COCOAPODS: 1.9.1

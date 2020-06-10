@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="16097" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesViewController" customModule="tvOSClient" customModuleProvider="target">
+            <connections>
+                <outlet property="containerForVideo" destination="qmE-2d-etC" id="Jp7-96-Ank"/>
+                <outlet property="tableView" destination="rbf-5J-EPW" id="uKd-qD-u14"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Eym-vH-oyN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="rbf-5J-EPW">
+                    <rect key="frame" x="90" y="1" width="400" height="1080"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="BEI-fh-EGh"/>
+                    </constraints>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmE-2d-etC">
+                    <rect key="frame" x="590" y="0.0" width="1240" height="1080"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="rbf-5J-EPW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="1" id="1DX-Or-fLP"/>
+                <constraint firstItem="qmE-2d-etC" firstAttribute="leading" secondItem="rbf-5J-EPW" secondAttribute="trailing" constant="100" id="2N2-Os-CXf"/>
+                <constraint firstItem="qmE-2d-etC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fDv-4W-BWL"/>
+                <constraint firstItem="rbf-5J-EPW" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="g7Y-32-kWv"/>
+                <constraint firstItem="qmE-2d-etC" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="rQ8-2Y-K91"/>
+                <constraint firstItem="rbf-5J-EPW" firstAttribute="leading" secondItem="nkI-NY-t1X" secondAttribute="leading" id="sGL-Q5-CYC"/>
+                <constraint firstItem="nkI-NY-t1X" firstAttribute="trailing" secondItem="qmE-2d-etC" secondAttribute="trailing" id="vq3-Vu-SUC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="nkI-NY-t1X"/>
+            <point key="canvasLocation" x="69" y="118"/>
+        </view>
+    </objects>
+</document>

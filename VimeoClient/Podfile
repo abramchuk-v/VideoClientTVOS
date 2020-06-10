@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'VimeoClient' do
+  pod 'VimeoNetworking'
+  use_frameworks!
+
+  # Pods for VimeoClient
+
+  target 'VimeoClientTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'tvOSClient' do
+  pod 'VimeoNetworking'
+  use_frameworks!
+
+  # Pods for VimeoClient
+
+  target 'tvOSClientTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
