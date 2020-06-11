@@ -22,13 +22,6 @@ class VideoCollectionCell: UICollectionViewCell {
         videoThumbnail.clipsToBounds = true
     }
     
-    func config(for video: VIMVideo) {
-        let imageObject = video.pictureCollection?.picture(forWidth: Float(videoThumbnail.frame.size.width))
-        videoThumbnail.imageWith(link: imageObject?.link)
-        videoLabel.text = video.name
-    }
-    
-    
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         coordinator.addCoordinatedAnimations({
             if self.isFocused {
@@ -38,4 +31,12 @@ class VideoCollectionCell: UICollectionViewCell {
             }
         }, completion: nil)
     }
+}
+
+extension VideoCollectionCell: ConfigurableVideoCell {
+    func config(for video: VIMVideo) {
+           let imageObject = video.pictureCollection?.picture(forWidth: Float(videoThumbnail.frame.size.width))
+           videoThumbnail.imageWith(link: imageObject?.link)
+           videoLabel.text = video.name
+       }
 }

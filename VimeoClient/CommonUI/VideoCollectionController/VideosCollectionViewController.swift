@@ -9,7 +9,7 @@
 import UIKit
 import VimeoNetworking.VIMVideo
 
-protocol VideoSelectDelegate {
+protocol VideoSelectionDelegate {
     func didSelect(video: VIMVideo)
 }
 
@@ -17,7 +17,7 @@ protocol VideoCollectionInterface: UIViewController {
     init()
     func update(for videos: [VIMVideo])
     func didSelect(video: VIMVideo)
-    var delegate: VideoSelectDelegate? { get set }
+    var delegate: VideoSelectionDelegate? { get set }
 }
 
 extension VideoCollectionInterface {
@@ -26,12 +26,12 @@ extension VideoCollectionInterface {
     }
 }
 
-class VideosCollectionViewController: UIViewController {
+class VideosCollectionViewController<Cell: ConfigurableVideoCell>: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private var videos: [VIMVideo] = []
-    var delegate: VideoSelectDelegate?
+    var delegate: VideoSelectionDelegate?
     
     required init() {
         super.init(nibName: Self.identifier, bundle: nil)
@@ -45,7 +45,23 @@ class VideosCollectionViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(VideoCollectionCell.self)
+        collectionView.register(cellClass: Cell.self)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let video = videos[indexPath.row]
+        didSelect(video: video)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        videos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(cellClass: Cell.self, for: indexPath)
+        cell.config(for: videos[indexPath.row])
+        return cell
+
     }
 }
 
@@ -53,26 +69,6 @@ extension VideosCollectionViewController: VideoCollectionInterface {
     func update(for videos: [VIMVideo]) {
         self.videos = videos
         collectionView.reloadData()
-    }
-}
-
-extension VideosCollectionViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let video = videos[indexPath.row]
-        didSelect(video: video)
-    }
-}
-
-extension VideosCollectionViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        videos.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(cellClass: VideoCollectionCell.self, for: indexPath)
-        cell.config(for: videos[indexPath.row])
-        return cell
-
     }
 }
 

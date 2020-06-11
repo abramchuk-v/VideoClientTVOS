@@ -45,14 +45,20 @@
 		04369E342490DD4E0042C0C6 /* VideoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DA04248FCBAD008D92E7 /* VideoCollectionCell.swift */; };
 		04369E3C2490FBC50042C0C6 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E3A2490FBC50042C0C6 /* SearchController.swift */; };
 		04369E3D2490FBC50042C0C6 /* SearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04369E3B2490FBC50042C0C6 /* SearchController.xib */; };
+		047AA6402492038700538CA1 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AA63E2492038700538CA1 /* CategoriesVC.swift */; };
+		047AA6412492038700538CA1 /* CategoriesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047AA63F2492038700538CA1 /* CategoriesVC.xib */; };
+		047AA643249205E000538CA1 /* ConfigurableCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AA642249205E000538CA1 /* ConfigurableCategoryCell.swift */; };
+		047AA644249205E000538CA1 /* ConfigurableCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AA642249205E000538CA1 /* ConfigurableCategoryCell.swift */; };
+		047AA64624920E3D00538CA1 /* ConfigurableVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AA64524920E3D00538CA1 /* ConfigurableVideoCell.swift */; };
+		047AA64724920E3D00538CA1 /* ConfigurableVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AA64524920E3D00538CA1 /* ConfigurableVideoCell.swift */; };
 		04E9D9D1248F95E7008D92E7 /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E9D9D0248F95E7008D92E7 /* CommonAssets.xcassets */; };
 		04E9D9D2248F95E7008D92E7 /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E9D9D0248F95E7008D92E7 /* CommonAssets.xcassets */; };
 		04E9D9D3248F95EC008D92E7 /* VimeoTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D9CE248F9542008D92E7 /* VimeoTabbarVC.swift */; };
 		04E9D9D4248F9703008D92E7 /* ErrorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E991A248A4C05007AF099 /* ErrorStructure.swift */; };
 		04E9D9D5248F970A008D92E7 /* APICredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E9914248A2144007AF099 /* APICredits.swift */; };
 		04E9D9D6248F970D008D92E7 /* TableViewGenericCellsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E991C248A78BC007AF099 /* TableViewGenericCellsExtension.swift */; };
-		04E9D9F5248F9EE6008D92E7 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D9F3248F9EE6008D92E7 /* CategoriesViewController.swift */; };
-		04E9D9F6248F9EE6008D92E7 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9D9F4248F9EE6008D92E7 /* CategoriesViewController.xib */; };
+		04E9D9F5248F9EE6008D92E7 /* CategoriesTabContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D9F3248F9EE6008D92E7 /* CategoriesTabContainer.swift */; };
+		04E9D9F6248F9EE6008D92E7 /* CategoriesTabContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9D9F4248F9EE6008D92E7 /* CategoriesTabContainer.xib */; };
 		04E9D9F9248F9EFF008D92E7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D9F7248F9EFF008D92E7 /* CategoryCell.swift */; };
 		04E9D9FA248F9EFF008D92E7 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9D9F8248F9EFF008D92E7 /* CategoryCell.xib */; };
 		04E9D9FD248FA525008D92E7 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D9FC248FA525008D92E7 /* CategoriesViewModel.swift */; };
@@ -125,10 +131,14 @@
 		04369E302490DBFD0042C0C6 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		04369E3A2490FBC50042C0C6 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		04369E3B2490FBC50042C0C6 /* SearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchController.xib; sourceTree = "<group>"; };
+		047AA63E2492038700538CA1 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		047AA63F2492038700538CA1 /* CategoriesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesVC.xib; sourceTree = "<group>"; };
+		047AA642249205E000538CA1 /* ConfigurableCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCategoryCell.swift; sourceTree = "<group>"; };
+		047AA64524920E3D00538CA1 /* ConfigurableVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableVideoCell.swift; sourceTree = "<group>"; };
 		04E9D9CE248F9542008D92E7 /* VimeoTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoTabbarVC.swift; sourceTree = "<group>"; };
 		04E9D9D0248F95E7008D92E7 /* CommonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonAssets.xcassets; sourceTree = "<group>"; };
-		04E9D9F3248F9EE6008D92E7 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
-		04E9D9F4248F9EE6008D92E7 /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
+		04E9D9F3248F9EE6008D92E7 /* CategoriesTabContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTabContainer.swift; sourceTree = "<group>"; };
+		04E9D9F4248F9EE6008D92E7 /* CategoriesTabContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesTabContainer.xib; sourceTree = "<group>"; };
 		04E9D9F7248F9EFF008D92E7 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		04E9D9F8248F9EFF008D92E7 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		04E9D9FC248FA525008D92E7 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
@@ -247,7 +257,7 @@
 				04369E242490BCE20042C0C6 /* PlayerController */,
 				04369E182490A4030042C0C6 /* VideoInfo */,
 				04E9D9FF248FC863008D92E7 /* VideosCollection */,
-				04E9D9E8248F9C87008D92E7 /* Categories */,
+				04E9D9E8248F9C87008D92E7 /* CategoriesTab */,
 				040E98EB248A1D7B007AF099 /* AppDelegate.swift */,
 				040E98F5248A1D7D007AF099 /* Assets.xcassets */,
 				040E98F7248A1D7D007AF099 /* LaunchScreen.storyboard */,
@@ -320,13 +330,6 @@
 			path = PlayerController;
 			sourceTree = "<group>";
 		};
-		04369E252490C3950042C0C6 /* ViewCommentsLikes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewCommentsLikes;
-			sourceTree = "<group>";
-		};
 		04369E2B2490DB890042C0C6 /* Tabbars */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +359,7 @@
 			children = (
 				04E9DA00248FC893008D92E7 /* VideosCollectionViewController.swift */,
 				04E9DA04248FCBAD008D92E7 /* VideoCollectionCell.swift */,
+				047AA64524920E3D00538CA1 /* ConfigurableVideoCell.swift */,
 			);
 			path = VideoCollectionController;
 			sourceTree = "<group>";
@@ -373,7 +377,6 @@
 			isa = PBXGroup;
 			children = (
 				04369E2B2490DB890042C0C6 /* Tabbars */,
-				04369E252490C3950042C0C6 /* ViewCommentsLikes */,
 				04369E202490B2E70042C0C6 /* Player */,
 				04369E322490DD130042C0C6 /* VideoCollectionController */,
 				04E9D9DD248F9A9F008D92E7 /* Categories */,
@@ -386,19 +389,22 @@
 		04E9D9DD248F9A9F008D92E7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				047AA63E2492038700538CA1 /* CategoriesVC.swift */,
 				04E9D9F7248F9EFF008D92E7 /* CategoryCell.swift */,
+				047AA642249205E000538CA1 /* ConfigurableCategoryCell.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		04E9D9E8248F9C87008D92E7 /* Categories */ = {
+		04E9D9E8248F9C87008D92E7 /* CategoriesTab */ = {
 			isa = PBXGroup;
 			children = (
-				04E9D9F3248F9EE6008D92E7 /* CategoriesViewController.swift */,
-				04E9D9F4248F9EE6008D92E7 /* CategoriesViewController.xib */,
+				04E9D9F3248F9EE6008D92E7 /* CategoriesTabContainer.swift */,
+				04E9D9F4248F9EE6008D92E7 /* CategoriesTabContainer.xib */,
 				04E9D9F8248F9EFF008D92E7 /* CategoryCell.xib */,
+				047AA63F2492038700538CA1 /* CategoriesVC.xib */,
 			);
-			path = Categories;
+			path = CategoriesTab;
 			sourceTree = "<group>";
 		};
 		04E9D9FB248FA50B008D92E7 /* CategoryModels */ = {
@@ -613,10 +619,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047AA6412492038700538CA1 /* CategoriesVC.xib in Resources */,
 				04E9D9FA248F9EFF008D92E7 /* CategoryCell.xib in Resources */,
 				040E98F9248A1D7D007AF099 /* LaunchScreen.storyboard in Resources */,
 				04E9D9D2248F95E7008D92E7 /* CommonAssets.xcassets in Resources */,
-				04E9D9F6248F9EE6008D92E7 /* CategoriesViewController.xib in Resources */,
+				04E9D9F6248F9EE6008D92E7 /* CategoriesTabContainer.xib in Resources */,
 				04E9DA07248FCBAD008D92E7 /* VideoCollectionCell.xib in Resources */,
 				04E9DA03248FC893008D92E7 /* VideosCollectionViewController.xib in Resources */,
 				04369E1F2490B0FD0042C0C6 /* VideoInfoViewController.xib in Resources */,
@@ -765,10 +772,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				040E9915248A2144007AF099 /* APICredits.swift in Sources */,
+				047AA643249205E000538CA1 /* ConfigurableCategoryCell.swift in Sources */,
 				040E9911248A1EB8007AF099 /* HCVimeoVideoExtractor.swift in Sources */,
 				040E9917248A4931007AF099 /* MP4ExtensionForVimeo.swift in Sources */,
 				04369E222490B2FB0042C0C6 /* PlayerView.swift in Sources */,
 				04369E1A2490A4500042C0C6 /* Route.swift in Sources */,
+				047AA64624920E3D00538CA1 /* ConfigurableVideoCell.swift in Sources */,
 				04369E292490D9F90042C0C6 /* CategoryCell.swift in Sources */,
 				040E990F248A1EB8007AF099 /* HCVimeoVideo.swift in Sources */,
 				040E98C5248A1C07007AF099 /* ViewController.swift in Sources */,
@@ -806,14 +815,17 @@
 				04E9D9D4248F9703008D92E7 /* ErrorStructure.swift in Sources */,
 				04E9DA0B248FD334008D92E7 /* VCExtension.swift in Sources */,
 				04E9DA06248FCBAD008D92E7 /* VideoCollectionCell.swift in Sources */,
-				04E9D9F5248F9EE6008D92E7 /* CategoriesViewController.swift in Sources */,
+				047AA6402492038700538CA1 /* CategoriesVC.swift in Sources */,
+				04E9D9F5248F9EE6008D92E7 /* CategoriesTabContainer.swift in Sources */,
 				040E98EC248A1D7B007AF099 /* AppDelegate.swift in Sources */,
 				04369E1B2490A4500042C0C6 /* Route.swift in Sources */,
+				047AA64724920E3D00538CA1 /* ConfigurableVideoCell.swift in Sources */,
 				04369E3C2490FBC50042C0C6 /* SearchController.swift in Sources */,
 				040E98F4248A1D7B007AF099 /* tvOSClient.xcdatamodeld in Sources */,
 				04E9D9D6248F970D008D92E7 /* TableViewGenericCellsExtension.swift in Sources */,
 				04369E1E2490B0FD0042C0C6 /* VideoInfoViewController.swift in Sources */,
 				04369E282490D60D0042C0C6 /* IntExtension.swift in Sources */,
+				047AA644249205E000538CA1 /* ConfigurableCategoryCell.swift in Sources */,
 				040E9910248A1EB8007AF099 /* HCVimeoVideo.swift in Sources */,
 				04E9D9D3248F95EC008D92E7 /* VimeoTabbarVC.swift in Sources */,
 				04E9D9FE248FA525008D92E7 /* CategoriesViewModel.swift in Sources */,

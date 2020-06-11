@@ -10,9 +10,9 @@ import UIKit
 class VimeoTabController: UITabBarController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        let vc = CategoriesViewController<VideosCollectionViewController>()
+        let vc = CategoriesTabContainer<VideosCollectionViewController<VideoCollectionCell>, CategoriesVC<CategoryCell>>()
         
-        let searchResultsViewController = SearchController<VideosCollectionViewController>()
+        let searchResultsViewController = SearchController<VideosCollectionViewController<VideoCollectionCell>>()
         searchResultsViewController.tabBarItem.image = UIImage(named: "searchImage")
         
         let searchController = UISearchController(searchResultsController: searchResultsViewController)

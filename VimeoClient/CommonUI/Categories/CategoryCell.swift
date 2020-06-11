@@ -24,7 +24,9 @@ class CategoryCell: UITableViewCell {
     override func prepareForReuse() {
         categoryLabel.text = ""
     }
-    
+}
+
+extension CategoryCell: ConfigurableCategoryCell {
     func config(category: VIMCategory) {
         categoryLabel.text = category.name
     }

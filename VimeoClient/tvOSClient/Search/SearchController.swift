@@ -63,7 +63,7 @@ extension SearchController: SearchControllerInterface {
     }
 }
 
-extension SearchController: VideoSelectDelegate, VideoDetailsRoute {
+extension SearchController: VideoSelectionDelegate, VideoDetailsRoute {
     func didSelect(video: VIMVideo) {
         openVideo(video: video)
     }

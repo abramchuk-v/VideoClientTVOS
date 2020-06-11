@@ -36,12 +36,14 @@ protocol VideoDetailsRoute: Route {
     func openVideo(video: VIMVideo, completion: (() -> Void)?)
 }
 
-#if os(tvOS)
+
 extension VideoDetailsRoute where Self: UIViewController {
     func openVideo(video: VIMVideo, completion: (() -> Void)? = nil) {
+        #if os(tvOS)
         let vc = VideoInfoViewController(video: video)
         push(viewController: vc, completion: completion)
+        #endif
     }
 }
 
-#endif
+

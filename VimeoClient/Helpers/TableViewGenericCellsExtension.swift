@@ -74,7 +74,7 @@ extension UICollectionView {
                  withReuseIdentifier: T.identifier)
     }
 
-    func register<T: UICollectionViewCell>(_: T.Type) {
+    func register<T: UICollectionViewCell>(cellClass: T.Type) {
         let bundle = Bundle(for: T.self)
         let nib = UINib(nibName: T.identifier, bundle: bundle)
         register(nib, forCellWithReuseIdentifier: T.identifier)
