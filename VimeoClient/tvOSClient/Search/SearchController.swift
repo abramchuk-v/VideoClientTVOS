@@ -34,7 +34,7 @@ class SearchController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionVC.delegate = self
+        collectionVC.setSelectionAction { [weak self] in self?.didSelect($0) }
         addChildViewControllerWithView(collectionVC,
                                         toView: collectionContainerView)
     }
@@ -67,8 +67,10 @@ extension SearchController {
     }
 }
 
-extension SearchController: VideoSelectionDelegate, VideoDetailsRoute {
-    func didSelect(video: VIMVideo) {
+//MARK: - Item selection
+extension SearchController: VideoDetailsRoute {
+    func didSelect(_ item: SearchItem) {
+        guard let video = item as? VIMVideo else { return }
         openVideo(video: video)
     }
 }

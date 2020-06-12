@@ -7,11 +7,6 @@
 //
 
 import UIKit
-import VimeoNetworking.VIMCategory
-
-protocol CategorySelectionDelegate {
-    func didSelect(category: VIMCategory)
-}
 
 class CategoriesVC
     <
@@ -27,7 +22,9 @@ class CategoriesVC
     
     private var categories: [Item] = []
     private var dataSource: UITableViewDiffableDataSource<Section, Item>! = nil
-    var selectionDelegate: CategorySelectionDelegate?
+    
+    
+    private var selectionAction: ((Item) -> Void)?
     
     required init() {
         super.init(nibName: Self.identifier, bundle: nil)
@@ -42,19 +39,21 @@ class CategoriesVC
         configTable()
     }
     
+    func setSelectionAction(handler: @escaping (Item) -> Void) {
+        selectionAction = handler
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let category = dataSource.itemIdentifier(for: indexPath) else { return }
         didSelect(category: category)
-        
     }
 }
 
 
 extension CategoriesVC {
-    typealias ItemCategory = Item
     func didSelect(category: Item) {
-        #warning("don't forget")
-        selectionDelegate?.didSelect(category: category as! VIMCategory)
+        guard let action = selectionAction else { return }
+        action(category)
     }
 
     func update(for categories: [Item]) {

@@ -40,10 +40,10 @@ class CategoriesTabContainer<
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collecctionVC.delegate = self
-        addChildViewControllerWithView(collecctionVC, toView: containerForVideo)
+        collecctionVC.setSelectionAction { [weak self] in self?.didSelect($0) }
+        tableVC.setSelectionAction { [weak self] in self?.didSelect(category: $0) }
         
-        tableVC.selectionDelegate = self
+        addChildViewControllerWithView(collecctionVC, toView: containerForVideo)
         addChildViewControllerWithView(tableVC, toView: containerForTable)
         
         viewModel.getCategories { [weak self] (result) in
@@ -57,11 +57,13 @@ class CategoriesTabContainer<
     }
 }
 
-//MARK: - Main interface.
-extension CategoriesTabContainer: CategorySelectionDelegate {
-    func didSelect(category: VIMCategory) {
+//MARK: - Category selection.
+extension CategoriesTabContainer {
+    func didSelect(category: CategoryItem) {
+        guard let cthr = category as? VIMCategory else { return}
+        
         collecctionVC.update(for: [])
-        viewModel.video(for: category) { [weak self] (result) in
+        viewModel.video(for: cthr) { [weak self] (result) in
             switch result {
             case .failure(let err):
                 self?.handle(error: err)
@@ -76,9 +78,10 @@ extension CategoriesTabContainer: CategorySelectionDelegate {
     }
 }
 
-//MARK: - VideoSelectDelegate, Collection delegate.
-extension CategoriesTabContainer: VideoSelectionDelegate, VideoDetailsRoute {
-    func didSelect(video: VIMVideo) {
+//MARK: - Video selection and routing.
+extension CategoriesTabContainer: VideoDetailsRoute {
+    func didSelect(_ item: VideoItem) {
+        guard let video = item as? VIMVideo else { return }
         openVideo(video: video)
     }
 }

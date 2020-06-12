@@ -7,13 +7,6 @@
 //
 
 import UIKit
-import VimeoNetworking.VIMVideo
-
-protocol VideoSelectionDelegate {
-    func didSelect(video: VIMVideo)
-}
-
-
 
 class VideosCollectionViewController
     <
@@ -29,7 +22,7 @@ class VideosCollectionViewController
     
     private var videos: [Item] = []
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
-    var delegate: VideoSelectionDelegate?
+    private var selectionAction: ((Item) -> Void)?
     
     required init() {
         super.init(nibName: Self.identifier, bundle: nil)
@@ -42,6 +35,10 @@ class VideosCollectionViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollection()
+    }
+    
+    func setSelectionAction(handler: @escaping (Item) -> Void) {
+        selectionAction = handler
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -86,7 +83,7 @@ extension VideosCollectionViewController {
     }
     
     func didSelect(video: Item) {
-        #warning("don't forget")
-        delegate?.didSelect(video: video as! VIMVideo)
+        guard let action = selectionAction else { return }
+        action(video)
     }
 }
