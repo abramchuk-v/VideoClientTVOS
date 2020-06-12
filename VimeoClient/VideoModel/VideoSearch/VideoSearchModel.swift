@@ -8,9 +8,9 @@
 
 import Foundation
 import VimeoNetworking
-struct VideoSearchModel {
-    func getVideos(with key: String, handler: @escaping (Swift.Result<[VIMVideo], AppError>) -> Void) {
-        let request: Request<[VIMVideo]>
+struct VideoSearchModel<VideoItem> {
+    func getVideos(with key: String, handler: @escaping (Swift.Result<[VideoItem], AppError>) -> Void) {
+        let request: Request<[VideoItem]>
         request = Request(path: "/videos", parameters: ["query" : key])
         let _ = VimeoClient.defaultClient.request(request) { (result) in
             switch result {

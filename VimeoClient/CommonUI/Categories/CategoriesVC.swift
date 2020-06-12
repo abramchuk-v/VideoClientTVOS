@@ -61,11 +61,12 @@ extension CategoriesVC {
         self.categories = categories
         updateUI()
 
-        guard let firstCat = categories.first else { return }
-        tableView.selectRow(at: IndexPath(row: 0, section: 0),
+        let index = IndexPath(row: 0, section: 0)
+        guard let firstItem = dataSource.itemIdentifier(for: index) else { return }
+        tableView.selectRow(at: index,
                             animated: true,
                             scrollPosition: .none)
-        didSelect(category: firstCat)
+        didSelect(category: firstItem)
     }
 
 }

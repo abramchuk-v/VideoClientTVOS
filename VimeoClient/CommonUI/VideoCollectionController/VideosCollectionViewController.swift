@@ -13,6 +13,8 @@ protocol VideoSelectionDelegate {
     func didSelect(video: VIMVideo)
 }
 
+
+
 class VideosCollectionViewController
     <
     Item: Hashable,
@@ -88,6 +90,3 @@ extension VideosCollectionViewController {
         delegate?.didSelect(video: video as! VIMVideo)
     }
 }
-
-
-

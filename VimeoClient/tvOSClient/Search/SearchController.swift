@@ -9,20 +9,18 @@
 import UIKit
 import VimeoNetworking.VIMVideo
 
-protocol SearchControllerInterface {
-    func startSearch(key: String)
-}
-
 class SearchController
     <
-    CollectionView: VideosCollectionViewController<VIMVideo, VideoCollectionCell>
+    SearchItem: Hashable,
+    SearchCell: ConfigurableVideoCell<SearchItem>,
+    CollectionVC:VideosCollectionViewController<SearchItem, SearchCell>
     >: UIViewController, UISearchResultsUpdating {
     
     
     @IBOutlet private weak var collectionContainerView: UIView!
     
-    private let searchMdoel = VideoSearchModel()
-    private let collecctionVC: CollectionView = CollectionView()
+    private let searchMdoel = VideoSearchModel<SearchItem>()
+    private let collectionVC = CollectionVC()
     private var lastSearchKey = ""
     
     init() {
@@ -36,8 +34,8 @@ class SearchController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collecctionVC.delegate = self
-        addChildViewControllerWithView(collecctionVC,
+        collectionVC.delegate = self
+        addChildViewControllerWithView(collectionVC,
                                         toView: collectionContainerView)
     }
     
@@ -55,13 +53,13 @@ class SearchController
     }
 }
 
-extension SearchController: SearchControllerInterface {
+extension SearchController {
     func startSearch(key: String) {
-        collecctionVC.update(for: [])
+        collectionVC.update(for: [])
         searchMdoel.getVideos(with: key) { [weak self] (result) in
             switch result {
             case .success(let videos):
-                self?.collecctionVC.update(for: videos)
+                self?.collectionVC.update(for: videos)
             case .failure(let err):
                 print(err.localizedDescription)
             }

@@ -14,21 +14,29 @@ class VimeoTabController: UITabBarController {
         let vc =
             CategoriesTabContainer
             <
-            VIMVideo, VIMCategory, CategoryCell, VideoCollectionCell
+                VIMVideo,
+                VideoCollectionCell,
+                VideosCollectionViewController,
+                VIMCategory,
+                CategoryCell,
+                CategoriesVC
             >()
         
         let searchResultsViewController = SearchController
             <
-            VideosCollectionViewController<VIMVideo, VideoCollectionCell>
+                VIMVideo,
+                VideoCollectionCell,
+                VideosCollectionViewController
             >()
-        searchResultsViewController.tabBarItem.image = UIImage(named: "searchImage")
         
         let searchController = UISearchController(searchResultsController: searchResultsViewController)
         searchController.searchResultsUpdater = searchResultsViewController
         searchController.hidesNavigationBarDuringPresentation = true
 
         let searchContainerViewController = UISearchContainerViewController(searchController: searchController)
-        searchContainerViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "searchIcon"), tag: 0)
+        searchContainerViewController.tabBarItem = UITabBarItem(title: "Search",
+                                                                image: UIImage(named: "searchIcon"),
+                                                                tag: 0)
         
         viewControllers = [vc, searchContainerViewController]
     }
