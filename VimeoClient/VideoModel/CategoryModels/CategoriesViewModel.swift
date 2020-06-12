@@ -8,11 +8,11 @@
 
 import Foundation
 import VimeoNetworking
-struct CategoriesViewModel {
-    private var lastRequest: Response<[VIMCategory]>?
+struct CategoriesViewModel<CategoryItem, VideoItem> {
+    private var lastRequest: Response<[CategoryItem]>?
     
-    func getCategories(handler: @escaping (Swift.Result<[VIMCategory], AppError>) -> Void) {
-        let request: Request<[VIMCategory]>
+    func getCategories(handler: @escaping (Swift.Result<[CategoryItem], AppError>) -> Void) {
+        let request: Request<[CategoryItem]>
         request = Request(path: "/categories")
         let _ = VimeoClient.defaultClient.request(request) { (result) in
             switch result {
@@ -24,9 +24,9 @@ struct CategoriesViewModel {
         }
     }
     
-    func video(for category: VIMCategory, handler: @escaping (Swift.Result<[VIMVideo], AppError>) -> Void) {
+    func video(for category: VIMCategory, handler: @escaping (Swift.Result<[VideoItem], AppError>) -> Void) {
         guard let link = category.uri else { return }
-        let request: Request<[VIMVideo]>
+        let request: Request<[VideoItem]>
         request = Request(path: "\(link)/videos")
         let _ = VimeoClient.defaultClient.request(request) { (result) in
             switch result {

@@ -13,14 +13,6 @@ protocol CategorySelectionDelegate {
     func didSelect(category: VIMCategory)
 }
 
-protocol CategoriesVCInterface: UIViewController {
-    associatedtype ItemCategory
-    init()
-    func didSelect(category: ItemCategory)
-    func update(for categories: [ItemCategory])
-    var selectionDelegate: CategorySelectionDelegate? { get set }
-}
-
 class CategoriesVC
     <
     Item: Hashable,
@@ -58,14 +50,14 @@ class CategoriesVC
 }
 
 
-extension CategoriesVC: CategoriesVCInterface {
+extension CategoriesVC {
     typealias ItemCategory = Item
-    func didSelect(category: ItemCategory) {
+    func didSelect(category: Item) {
         #warning("don't forget")
         selectionDelegate?.didSelect(category: category as! VIMCategory)
     }
 
-    func update(for categories: [ItemCategory]) {
+    func update(for categories: [Item]) {
         self.categories = categories
         updateUI()
 

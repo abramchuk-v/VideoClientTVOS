@@ -11,10 +11,10 @@ import VimeoNetworking
 class VimeoTabController: UITabBarController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        let vc = CategoriesTabContainer
+        let vc =
+            CategoriesTabContainer
             <
-            VideosCollectionViewController<VIMVideo, VideoCollectionCell>,
-            CategoriesVC<VIMCategory, CategoryCell>
+            VIMVideo, VIMCategory, CategoryCell, VideoCollectionCell
             >()
         
         let searchResultsViewController = SearchController

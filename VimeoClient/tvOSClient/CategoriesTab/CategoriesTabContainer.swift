@@ -11,18 +11,20 @@ import VimeoNetworking
 
 
 class CategoriesTabContainer<
-    CollectionView: VideosCollectionViewController<VIMVideo, VideoCollectionCell>,
-    Table: CategoriesVC<VIMCategory, CategoryCell>
+    VideoItem: VIMVideo,
+    CategoryItem: VIMCategory,
+    CategoryCell: ConfigurableCell<CategoryItem>,
+    VideoCell: ConfigurableVideoCell<VideoItem>
     >: UIViewController {
     
     @IBOutlet private weak var containerForVideo: UIView!
     @IBOutlet private weak var containerForTable: UIView!
     
     private var categories: [VIMCategory] = []
-    private let viewModel = CategoriesViewModel()
+    private let viewModel = CategoriesViewModel<CategoryItem, VideoItem>()
     
-    private let tableVC: Table = Table()
-    private let collecctionVC: CollectionView = CollectionView()
+    private let tableVC = CategoriesVC<CategoryItem, CategoryCell>()
+    private let collecctionVC = VideosCollectionViewController<VideoItem, VideoCell>()
     
     init() {
         super.init(nibName: Self.identifier, bundle: nil)

@@ -13,14 +13,6 @@ protocol VideoSelectionDelegate {
     func didSelect(video: VIMVideo)
 }
 
-protocol VideoCollectionInterface: UIViewController {
-    associatedtype VideoItem
-    init()
-    func update(for videos: [VideoItem])
-    func didSelect(video: VideoItem)
-    var delegate: VideoSelectionDelegate? { get set }
-}
-
 class VideosCollectionViewController
     <
     Item: Hashable,
@@ -85,8 +77,7 @@ private extension VideosCollectionViewController {
     }
 }
 
-extension VideosCollectionViewController: VideoCollectionInterface {
-    typealias VideoItem = Item
+extension VideosCollectionViewController {
     func update(for videos: [Item]) {
         self.videos = videos
         updateUI()
