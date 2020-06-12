@@ -14,23 +14,27 @@ protocol VideoSelectionDelegate {
 }
 
 protocol VideoCollectionInterface: UIViewController {
+    associatedtype VideoItem
     init()
-    func update(for videos: [VIMVideo])
-    func didSelect(video: VIMVideo)
+    func update(for videos: [VideoItem])
+    func didSelect(video: VideoItem)
     var delegate: VideoSelectionDelegate? { get set }
 }
 
-extension VideoCollectionInterface {
-    func didSelect(video: VIMVideo) {
-        delegate?.didSelect(video: video)
+class VideosCollectionViewController
+    <
+    Item: Hashable,
+    Cell: ConfigurableVideoCell<Item>
+    >: UIViewController, UICollectionViewDelegate {
+
+    enum Section {
+        case main
     }
-}
-
-class VideosCollectionViewController<Cell: ConfigurableVideoCell>: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private var videos: [VIMVideo] = []
+    private var videos: [Item] = []
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     var delegate: VideoSelectionDelegate?
     
     required init() {
@@ -43,32 +47,54 @@ class VideosCollectionViewController<Cell: ConfigurableVideoCell>: UIViewControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(cellClass: Cell.self)
+        configCollection()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let video = videos[indexPath.row]
+        guard let video = dataSource.itemIdentifier(for: indexPath) else { return }
         didSelect(video: video)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        videos.count
+}
+
+private extension VideosCollectionViewController {
+    func configCollection() {
+        collectionView.delegate = self
+        collectionView.register(cellClass: Cell.self)
+        
+        dataSource = UICollectionViewDiffableDataSource
+            <Section, Item>(collectionView: collectionView)
+            { (collection, index, item) -> UICollectionViewCell? in
+                let cell = collection.dequeueReusableCell(cellClass: Cell.self, for: index)
+                cell.config(for: item)
+                return cell
+        }
+        
+        updateUI(animated: false)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(cellClass: Cell.self, for: indexPath)
-        cell.config(for: videos[indexPath.row])
-        return cell
-
+    func currentSnapShot() -> NSDiffableDataSourceSnapshot<Section, Item> {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(videos)
+        return snapshot
+    }
+    
+    func updateUI(animated: Bool = true) {
+        let snapshot = currentSnapShot()
+        dataSource.apply(snapshot, animatingDifferences: animated)
     }
 }
 
 extension VideosCollectionViewController: VideoCollectionInterface {
-    func update(for videos: [VIMVideo]) {
+    typealias VideoItem = Item
+    func update(for videos: [Item]) {
         self.videos = videos
-        collectionView.reloadData()
+        updateUI()
+    }
+    
+    func didSelect(video: Item) {
+        #warning("don't forget")
+        delegate?.didSelect(video: video as! VIMVideo)
     }
 }
 

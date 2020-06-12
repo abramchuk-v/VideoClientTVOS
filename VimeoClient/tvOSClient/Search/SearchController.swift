@@ -13,7 +13,12 @@ protocol SearchControllerInterface {
     func startSearch(key: String)
 }
 
-class SearchController<CollectionView: VideoCollectionInterface>: UIViewController, UISearchResultsUpdating {
+class SearchController
+    <
+    CollectionView: VideosCollectionViewController<VIMVideo, VideoCollectionCell>
+    >: UIViewController, UISearchResultsUpdating {
+    
+    
     @IBOutlet private weak var collectionContainerView: UIView!
     
     private let searchMdoel = VideoSearchModel()
@@ -52,6 +57,7 @@ class SearchController<CollectionView: VideoCollectionInterface>: UIViewControll
 
 extension SearchController: SearchControllerInterface {
     func startSearch(key: String) {
+        collecctionVC.update(for: [])
         searchMdoel.getVideos(with: key) { [weak self] (result) in
             switch result {
             case .success(let videos):

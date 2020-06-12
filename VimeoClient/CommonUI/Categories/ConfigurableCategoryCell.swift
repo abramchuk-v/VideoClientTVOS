@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import VimeoNetworking.VIMCategory
 
-protocol ConfigurableCategoryCell: UITableViewCell {
-    func config(category: VIMCategory)
+class ConfigurableCell<Item: Hashable>: UITableViewCell {
+    func config(category: Item) {}
 }

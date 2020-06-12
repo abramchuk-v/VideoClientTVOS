@@ -7,23 +7,34 @@
 //
 
 import UIKit
-import VimeoNetworking
+import VimeoNetworking.VIMCategory
 
 protocol CategorySelectionDelegate {
     func didSelect(category: VIMCategory)
 }
 
 protocol CategoriesVCInterface: UIViewController {
+    associatedtype ItemCategory
     init()
-    func didSelect(category: VIMCategory)
-    func update(for categories: [VIMCategory])
+    func didSelect(category: ItemCategory)
+    func update(for categories: [ItemCategory])
     var selectionDelegate: CategorySelectionDelegate? { get set }
 }
 
-class CategoriesVC<Cell: ConfigurableCategoryCell>: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet private weak var tableView: UITableView!
-    private var categories: [VIMCategory] = []
+class CategoriesVC
+    <
+    Item: Hashable,
+    Cell: ConfigurableCell<Item>
+    >: UIViewController, UITableViewDelegate {
     
+    enum Section {
+        case main
+    }
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
+    private var categories: [Item] = []
+    private var dataSource: UITableViewDiffableDataSource<Section, Item>! = nil
     var selectionDelegate: CategorySelectionDelegate?
     
     required init() {
@@ -36,41 +47,28 @@ class CategoriesVC<Cell: ConfigurableCategoryCell>: UIViewController, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.register(cellClass: Cell.self)
-        tableView.delegate = self
-        tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        configTable()
     }
     
-    //MARK: - UITableViewDelegate.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = categories[indexPath.row]
-        didSelect(category: model)
+        guard let category = dataSource.itemIdentifier(for: indexPath) else { return }
+        didSelect(category: category)
         
-    }
-    //MARK: - UITableViewDataSource.
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        categories.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cellClass: Cell.self)
-        cell.config(category: categories[indexPath.row])
-        return cell
     }
 }
 
 
 extension CategoriesVC: CategoriesVCInterface {
-    func didSelect(category: VIMCategory) {
-        selectionDelegate?.didSelect(category: category)
+    typealias ItemCategory = Item
+    func didSelect(category: ItemCategory) {
+        #warning("don't forget")
+        selectionDelegate?.didSelect(category: category as! VIMCategory)
     }
-    
-    func update(for categories: [VIMCategory]) {
+
+    func update(for categories: [ItemCategory]) {
         self.categories = categories
-        tableView.reloadData()
-        
+        updateUI()
+
         guard let firstCat = categories.first else { return }
         tableView.selectRow(at: IndexPath(row: 0, section: 0),
                             animated: true,
@@ -78,4 +76,33 @@ extension CategoriesVC: CategoriesVCInterface {
         didSelect(category: firstCat)
     }
 
+}
+
+private extension CategoriesVC {
+    func configTable() {
+        tableView.register(cellClass: Cell.self)
+        tableView.delegate = self
+        
+        dataSource = UITableViewDiffableDataSource
+            <Section, Item>(tableView: tableView)
+            { (table, index, item) -> UITableViewCell? in
+                let cell = table.dequeue(cellClass: Cell.self, forIndexPath: index)
+                cell.config(category: item)
+                return cell
+        }
+        
+        updateUI(animated: false)
+    }
+    
+    func currentSnapShot() -> NSDiffableDataSourceSnapshot<Section, Item> {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(categories)
+        return snapshot
+    }
+    
+    func updateUI(animated: Bool = true) {
+        let snapshot = currentSnapShot()
+        dataSource.apply(snapshot, animatingDifferences: animated)
+    }
 }

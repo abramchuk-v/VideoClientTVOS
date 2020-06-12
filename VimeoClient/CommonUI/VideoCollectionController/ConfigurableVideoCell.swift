@@ -9,6 +9,6 @@
 import UIKit
 import VimeoNetworking.VIMVideo
 
-protocol ConfigurableVideoCell: UICollectionViewCell {
-    func config(for video: VIMVideo)
+class ConfigurableVideoCell<Item: Hashable>: UICollectionViewCell {
+    func config(for video: Item) {}
 }

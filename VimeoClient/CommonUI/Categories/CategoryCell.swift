@@ -9,7 +9,7 @@
 import UIKit
 import VimeoNetworking.VIMCategory
 
-class CategoryCell: UITableViewCell {
+class CategoryCell: ConfigurableCell<VIMCategory> {
     @IBOutlet private weak var categoryLabel: UILabel!
     
     override func awakeFromNib() {
@@ -24,10 +24,9 @@ class CategoryCell: UITableViewCell {
     override func prepareForReuse() {
         categoryLabel.text = ""
     }
-}
-
-extension CategoryCell: ConfigurableCategoryCell {
-    func config(category: VIMCategory) {
+    
+    override func config(category: VIMCategory) {
         categoryLabel.text = category.name
     }
 }
+

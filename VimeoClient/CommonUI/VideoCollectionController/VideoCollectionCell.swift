@@ -9,7 +9,7 @@
 import UIKit
 import VimeoNetworking.VIMVideo
 
-class VideoCollectionCell: UICollectionViewCell {
+class VideoCollectionCell: ConfigurableVideoCell<VIMVideo> {
     @IBOutlet private weak var videoThumbnail: UIImageView!
     @IBOutlet private weak var videoLabel: UILabel!
     @IBOutlet private weak var spinnerView: UIActivityIndicatorView!
@@ -31,12 +31,10 @@ class VideoCollectionCell: UICollectionViewCell {
             }
         }, completion: nil)
     }
-}
-
-extension VideoCollectionCell: ConfigurableVideoCell {
-    func config(for video: VIMVideo) {
-           let imageObject = video.pictureCollection?.picture(forWidth: Float(videoThumbnail.frame.size.width))
-           videoThumbnail.imageWith(link: imageObject?.link)
-           videoLabel.text = video.name
-       }
+    
+    override func config(for video: VIMVideo) {
+        let imageObject = video.pictureCollection?.picture(forWidth: Float(videoThumbnail.frame.size.width))
+        videoThumbnail.imageWith(link: imageObject?.link)
+        videoLabel.text = video.name
+    }
 }

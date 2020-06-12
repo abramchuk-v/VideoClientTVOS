@@ -10,7 +10,11 @@ import UIKit
 import VimeoNetworking
 
 
-class CategoriesTabContainer<CollectionView: VideoCollectionInterface, Table: CategoriesVCInterface>: UIViewController {
+class CategoriesTabContainer<
+    CollectionView: VideosCollectionViewController<VIMVideo, VideoCollectionCell>,
+    Table: CategoriesVC<VIMCategory, CategoryCell>
+    >: UIViewController {
+    
     @IBOutlet private weak var containerForVideo: UIView!
     @IBOutlet private weak var containerForTable: UIView!
     
@@ -53,6 +57,7 @@ class CategoriesTabContainer<CollectionView: VideoCollectionInterface, Table: Ca
 //MARK: - Main interface.
 extension CategoriesTabContainer: CategorySelectionDelegate {
     func didSelect(category: VIMCategory) {
+        collecctionVC.update(for: [])
         viewModel.video(for: category) { [weak self] (result) in
             switch result {
             case .failure(let err):
