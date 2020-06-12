@@ -9,10 +9,9 @@
 import UIKit
 import VimeoNetworking
 
-
 class CategoriesTabContainer<
-    VideoItem: VIMVideo,
-    CategoryItem: VIMCategory,
+    VideoItem: Hashable,
+    CategoryItem: Hashable,
     CategoryCell: ConfigurableCell<CategoryItem>,
     VideoCell: ConfigurableVideoCell<VideoItem>
     >: UIViewController {
@@ -20,7 +19,7 @@ class CategoriesTabContainer<
     @IBOutlet private weak var containerForVideo: UIView!
     @IBOutlet private weak var containerForTable: UIView!
     
-    private var categories: [VIMCategory] = []
+    private var categories: [CategoryItem] = []
     private let viewModel = CategoriesViewModel<CategoryItem, VideoItem>()
     
     private let tableVC = CategoriesVC<CategoryItem, CategoryCell>()
