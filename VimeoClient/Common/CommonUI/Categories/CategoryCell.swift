@@ -9,7 +9,7 @@
 import UIKit
 import VimeoNetworking.VIMCategory
 
-class CategoryCell: ConfigurableCell<VIMCategory> {
+class CategoryCell: ConfigurableCategoryCell<VIMCategory> {
     @IBOutlet private weak var categoryLabel: UILabel!
     
     override func awakeFromNib() {

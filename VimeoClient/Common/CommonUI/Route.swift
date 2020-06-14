@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import VimeoNetworking.VIMVideo
+import VimeoNetworking
 
 protocol Route {
     func push(viewController: UIViewController, completion: (() -> Void)?)
@@ -33,15 +33,35 @@ extension Route where Self: UIViewController {
 }
 
 protocol VideoDetailsRoute: Route {
-    func openVideo(video: VIMVideo, completion: (() -> Void)?)
+    func openVideo(_ video: VIMVideo, completion: (() -> Void)?)
+    func openVideosCollection(for category: VIMCategory)
 }
 
 
 extension VideoDetailsRoute where Self: UIViewController {
-    func openVideo(video: VIMVideo, completion: (() -> Void)? = nil) {
+    func openVideo(_ video: VIMVideo, completion: (() -> Void)? = nil) {
+        let vc: VideoInfoInterface
         #if os(tvOS)
-        let vc = VideoInfoViewController(video: video)
+        vc = VideoInfoViewController(video: video)
+        #elseif os(iOS)
+        vc = VideoInfoController(video: video)
+        #endif
+        
         push(viewController: vc, completion: completion)
+    }
+    
+    
+    func openVideosCollection(for category: VIMCategory) {
+        #if os(iOS)
+        let vc =
+            VideoCollectionContainer
+            <
+                VIMCategory,
+                VIMVideo,
+                VideoCollectionSmallCell,
+                VideosCollectionViewController
+            >(category: category)
+        push(viewController: vc, completion: nil)
         #endif
     }
 }

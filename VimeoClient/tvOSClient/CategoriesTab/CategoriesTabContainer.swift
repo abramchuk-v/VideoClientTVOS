@@ -14,7 +14,7 @@ class CategoriesTabContainer<
     VideoCell: ConfigurableVideoCell<VideoItem>,
     VideoVC: VideosCollectionViewController<VideoItem, VideoCell>,
     CategoryItem: Hashable,
-    CategoryCell: ConfigurableCell<CategoryItem>,
+    CategoryCell: ConfigurableCategoryCell<CategoryItem>,
     CategoryVC: CategoriesVC<CategoryItem, CategoryCell>
     >: UIViewController {
     
@@ -22,7 +22,8 @@ class CategoriesTabContainer<
     @IBOutlet private weak var containerForTable: UIView!
     
     private var categories: [CategoryItem] = []
-    private let viewModel = CategoriesViewModel<CategoryItem, VideoItem>()
+    private let categoryDataModel = CategoriesModel<CategoryItem>()
+    private let videoDataModel = VideoModel<VideoItem>()
     
     private let tableVC = CategoryVC()
     private let collecctionVC = VideoVC()
@@ -46,7 +47,7 @@ class CategoriesTabContainer<
         addChildViewControllerWithView(collecctionVC, toView: containerForVideo)
         addChildViewControllerWithView(tableVC, toView: containerForTable)
         
-        viewModel.getCategories { [weak self] (result) in
+        categoryDataModel.getCategories { [weak self] (result) in
             switch result {
             case .success(let categories):
                 self?.tableVC.update(for: categories)
@@ -63,7 +64,7 @@ extension CategoriesTabContainer {
         guard let cthr = category as? VIMCategory else { return}
         
         collecctionVC.update(for: [])
-        viewModel.video(for: cthr) { [weak self] (result) in
+        videoDataModel.videos(for: cthr) { [weak self] (result) in
             switch result {
             case .failure(let err):
                 self?.handle(error: err)
@@ -82,7 +83,7 @@ extension CategoriesTabContainer {
 extension CategoriesTabContainer: VideoDetailsRoute {
     func didSelect(_ item: VideoItem) {
         guard let video = item as? VIMVideo else { return }
-        openVideo(video: video)
+        openVideo(video)
     }
 }
 

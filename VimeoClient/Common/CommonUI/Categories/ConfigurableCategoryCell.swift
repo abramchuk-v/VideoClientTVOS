@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ConfigurableCell<Item: Hashable>: UITableViewCell {
+class ConfigurableCategoryCell<Item: Hashable>: UITableViewCell {
     func config(category: Item) {}
 }

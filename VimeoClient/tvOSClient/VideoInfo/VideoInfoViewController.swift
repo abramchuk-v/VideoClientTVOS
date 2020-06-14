@@ -9,7 +9,7 @@
 import UIKit
 import VimeoNetworking.VIMVideo
 
-class VideoInfoViewController: UIViewController {
+class VideoInfoViewController: UIViewController, VideoInfoInterface {
     @IBOutlet private weak var videoImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionTextView: UITextView!
@@ -22,7 +22,7 @@ class VideoInfoViewController: UIViewController {
     
     private let video: VIMVideo
     
-    init(video: VIMVideo) {
+    required init(video: VIMVideo) {
         self.video = video
         super.init(nibName: Self.identifier, bundle: nil)
     }
@@ -58,8 +58,18 @@ class VideoInfoViewController: UIViewController {
     }
     
     @IBAction func playAction(_ sender: Any) {
+        play()
     }
     
     @IBAction func defaultPlayAction(_ sender: Any) {
+        defaultPlay()
+    }
+    
+    func play() {
+        
+    }
+    
+    func defaultPlay() {
+        
     }
 }

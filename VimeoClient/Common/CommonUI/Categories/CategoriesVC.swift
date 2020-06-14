@@ -11,7 +11,7 @@ import UIKit
 class CategoriesVC
     <
     Item: Hashable,
-    Cell: ConfigurableCell<Item>
+    Cell: ConfigurableCategoryCell<Item>
     >: UIViewController, UITableViewDelegate {
     
     enum Section {
@@ -60,12 +60,12 @@ extension CategoriesVC {
         self.categories = categories
         updateUI()
 
-        let index = IndexPath(row: 0, section: 0)
-        guard let firstItem = dataSource.itemIdentifier(for: index) else { return }
-        tableView.selectRow(at: index,
-                            animated: true,
-                            scrollPosition: .none)
-        didSelect(category: firstItem)
+//        let index = IndexPath(row: 0, section: 0)
+//        guard let firstItem = dataSource.itemIdentifier(for: index) else { return }
+//        tableView.selectRow(at: index,
+//                            animated: true,
+//                            scrollPosition: .none)
+//        didSelect(category: firstItem)
     }
 
 }

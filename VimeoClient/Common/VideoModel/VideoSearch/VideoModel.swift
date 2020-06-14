@@ -1,19 +1,17 @@
 //
-//  CategoriesViewModel.swift
+//  VideoSearchModel.swift
 //  VimeoClient
 //
-//  Created by Uladzislau Abramchuk on 6/9/20.
+//  Created by Uladzislau Abramchuk on 6/10/20.
 //  Copyright © 2020 Uladzislau Abramchuk. All rights reserved.
 //
 
 import Foundation
 import VimeoNetworking
-struct CategoriesViewModel<CategoryItem, VideoItem> {
-    private var lastRequest: Response<[CategoryItem]>?
-    
-    func getCategories(handler: @escaping (Swift.Result<[CategoryItem], AppError>) -> Void) {
-        let request: Request<[CategoryItem]>
-        request = Request(path: "/categories")
+struct VideoModel<VideoItem> {
+    func getVideos(with key: String, handler: @escaping (Swift.Result<[VideoItem], AppError>) -> Void) {
+        let request: Request<[VideoItem]>
+        request = Request(path: "/videos", parameters: ["query" : key])
         let _ = VimeoClient.defaultClient.request(request) { (result) in
             switch result {
             case .success(let response):
@@ -24,7 +22,7 @@ struct CategoriesViewModel<CategoryItem, VideoItem> {
         }
     }
     
-    func video(for category: VIMCategory, handler: @escaping (Swift.Result<[VideoItem], AppError>) -> Void) {
+    func videos(for category: VIMCategory, handler: @escaping (Swift.Result<[VideoItem], AppError>) -> Void) {
         guard let link = category.uri else { return }
         let request: Request<[VideoItem]>
         request = Request(path: "\(link)/videos")

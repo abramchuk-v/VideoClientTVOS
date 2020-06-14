@@ -19,7 +19,7 @@ class SearchController
     
     @IBOutlet private weak var collectionContainerView: UIView!
     
-    private let searchMdoel = VideoSearchModel<SearchItem>()
+    private let searchMdoel = VideoModel<SearchItem>()
     private let collectionVC = CollectionVC()
     private var lastSearchKey = ""
     
@@ -71,6 +71,6 @@ extension SearchController {
 extension SearchController: VideoDetailsRoute {
     func didSelect(_ item: SearchItem) {
         guard let video = item as? VIMVideo else { return }
-        openVideo(video: video)
+        openVideo(video)
     }
 }
