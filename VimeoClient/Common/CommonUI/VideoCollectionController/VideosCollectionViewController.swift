@@ -18,11 +18,12 @@ class VideosCollectionViewController
         case main
     }
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     private var videos: [Item] = []
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     private var selectionAction: ((Item) -> Void)?
+    private var footerAction: (() -> Void)?
     
     required init() {
         super.init(nibName: Self.identifier, bundle: nil)
@@ -34,16 +35,33 @@ class VideosCollectionViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.remembersLastFocusedIndexPath = true
+        footerAction = { [weak self] in
+            #warning("Add delay or croll throw the display link")
+            self?.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
+                                             at: .top,
+                                             animated: false)
+            self?.setNeedsFocusUpdate()
+            
+        }
         configCollection()
+    }
+    
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+        return [collectionView]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let video = dataSource.itemIdentifier(for: indexPath) else { return }
+        didSelect(video: video)
     }
     
     func setSelectionAction(handler: @escaping (Item) -> Void) {
         selectionAction = handler
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let video = dataSource.itemIdentifier(for: indexPath) else { return }
-        didSelect(video: video)
+    func setFooterAction(handler: @escaping () -> Void) {
+        footerAction = handler
     }
 }
 
@@ -51,7 +69,7 @@ private extension VideosCollectionViewController {
     func configCollection() {
         collectionView.delegate = self
         collectionView.register(cellClass: Cell.self)
-        
+
         dataSource = UICollectionViewDiffableDataSource
             <Section, Item>(collectionView: collectionView)
             { (collection, index, item) -> UICollectionViewCell? in
@@ -59,6 +77,24 @@ private extension VideosCollectionViewController {
                 cell.config(for: item)
                 return cell
         }
+        
+        
+        #if os(tvOS)
+        collectionView.registerNib(VideoCollectionFooter.self,
+                                   forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter)
+        dataSource.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
+            
+            guard kind == UICollectionView.elementKindSectionFooter else {
+                return nil
+            }
+            let view = collectionView
+                .dequeueReusableSupplementaryView(cellClass: VideoCollectionFooter.self,
+                                                  ofKind: UICollectionView.elementKindSectionFooter,
+                                                  for: indexPath)
+            view.setScrollToTopButtonAction(handler: self?.footerAction)
+            return view
+        }
+        #endif
         
         updateUI(animated: false)
     }

@@ -31,6 +31,8 @@
 		040E991D248A78BC007AF099 /* TableViewGenericCellsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E991C248A78BC007AF099 /* TableViewGenericCellsExtension.swift */; };
 		04273B87249A0FC30099706B /* FocusableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04273B86249A0FC30099706B /* FocusableTextView.swift */; };
 		04273B89249A1ACF0099706B /* FocusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04273B88249A1ACF0099706B /* FocusableLabel.swift */; };
+		04273B8C249A36F20099706B /* VideoCollectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04273B8A249A36F20099706B /* VideoCollectionFooter.swift */; };
+		04273B8D249A36F20099706B /* VideoCollectionFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04273B8B249A36F20099706B /* VideoCollectionFooter.xib */; };
 		04369E16248FD97D0042C0C6 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */; };
 		04369E17248FD97D0042C0C6 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */; };
 		04369E1A2490A4500042C0C6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E192490A4500042C0C6 /* Route.swift */; };
@@ -139,6 +141,8 @@
 		040E991C248A78BC007AF099 /* TableViewGenericCellsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewGenericCellsExtension.swift; sourceTree = "<group>"; };
 		04273B86249A0FC30099706B /* FocusableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextView.swift; sourceTree = "<group>"; };
 		04273B88249A1ACF0099706B /* FocusableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableLabel.swift; sourceTree = "<group>"; };
+		04273B8A249A36F20099706B /* VideoCollectionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionFooter.swift; sourceTree = "<group>"; };
+		04273B8B249A36F20099706B /* VideoCollectionFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionFooter.xib; sourceTree = "<group>"; };
 		04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		04369E192490A4500042C0C6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		04369E1C2490B0FD0042C0C6 /* VideoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
@@ -499,6 +503,8 @@
 			children = (
 				04E9DA01248FC893008D92E7 /* VideosCollectionViewController.xib */,
 				04E9DA05248FCBAD008D92E7 /* VideoCollectionCell.xib */,
+				04273B8A249A36F20099706B /* VideoCollectionFooter.swift */,
+				04273B8B249A36F20099706B /* VideoCollectionFooter.xib */,
 			);
 			path = VideosCollection;
 			sourceTree = "<group>";
@@ -712,6 +718,7 @@
 				04E9DA07248FCBAD008D92E7 /* VideoCollectionCell.xib in Resources */,
 				04E9DA03248FC893008D92E7 /* VideosCollectionViewController.xib in Resources */,
 				04369E1F2490B0FD0042C0C6 /* VideoInfoViewController.xib in Resources */,
+				04273B8D249A36F20099706B /* VideoCollectionFooter.xib in Resources */,
 				04369E3D2490FBC50042C0C6 /* SearchController.xib in Resources */,
 				040E98F6248A1D7D007AF099 /* Assets.xcassets in Resources */,
 			);
@@ -901,6 +908,7 @@
 			files = (
 				04273B87249A0FC30099706B /* FocusableTextView.swift in Sources */,
 				040E9918248A4A3D007AF099 /* MP4ExtensionForVimeo.swift in Sources */,
+				04273B8C249A36F20099706B /* VideoCollectionFooter.swift in Sources */,
 				040E9912248A1EB8007AF099 /* HCVimeoVideoExtractor.swift in Sources */,
 				04E9DA02248FC893008D92E7 /* VideosCollectionViewController.swift in Sources */,
 				04E9D9D5248F970A008D92E7 /* APICredits.swift in Sources */,

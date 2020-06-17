@@ -42,6 +42,7 @@ class CategoriesTabContainer<
         super.viewDidLoad()
         
         collecctionVC.setSelectionAction { [weak self] in self?.didSelect($0) }
+//        collecctionVC.set
         tableVC.setSelectionAction { [weak self] in self?.didSelect(category: $0) }
         
         addChildViewControllerWithView(collecctionVC, toView: containerForVideo)
