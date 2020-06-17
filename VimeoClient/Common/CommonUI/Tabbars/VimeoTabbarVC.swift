@@ -22,6 +22,7 @@ class VimeoTabController: UITabBarController {
                 CategoryCell,
                 CategoriesVC
             >()
+
         
         let searchResultsViewController = SearchController
             <
@@ -81,5 +82,32 @@ class VimeoTabController: UITabBarController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+extension UITabBarController {
+    func setTabBarVisible(visible:Bool, duration: TimeInterval, animated:Bool = true) {
+        if isVisible == visible { return }
+        
+        var transform: CGAffineTransform = .identity
+        if !visible {
+            
+            let frame = tabBar.frame
+            let yOffset = tabBar.convert(frame, to: nil)
+            let height = frame.size.height + yOffset.origin.y
+            
+            transform = CGAffineTransform(translationX: 0.0, y: -height)
+        }
+        
+        
+        UIViewPropertyAnimator(duration: duration, curve: .linear) { [weak self] in
+            self?.tabBar.transform = transform
+            self?.view.layoutIfNeeded()
+        }.startAnimation()
+    }
+    
+    var isVisible: Bool {
+        return tabBar.frame.origin.y >= 0
     }
 }

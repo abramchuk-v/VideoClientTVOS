@@ -18,7 +18,7 @@ class VideosCollectionViewController
         case main
     }
     
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     private var videos: [Item] = []
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil

@@ -29,6 +29,8 @@
 		040E9918248A4A3D007AF099 /* MP4ExtensionForVimeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E9916248A4931007AF099 /* MP4ExtensionForVimeo.swift */; };
 		040E991B248A4C05007AF099 /* ErrorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E991A248A4C05007AF099 /* ErrorStructure.swift */; };
 		040E991D248A78BC007AF099 /* TableViewGenericCellsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E991C248A78BC007AF099 /* TableViewGenericCellsExtension.swift */; };
+		04273B87249A0FC30099706B /* FocusableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04273B86249A0FC30099706B /* FocusableTextView.swift */; };
+		04273B89249A1ACF0099706B /* FocusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04273B88249A1ACF0099706B /* FocusableLabel.swift */; };
 		04369E16248FD97D0042C0C6 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */; };
 		04369E17248FD97D0042C0C6 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */; };
 		04369E1A2490A4500042C0C6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04369E192490A4500042C0C6 /* Route.swift */; };
@@ -135,6 +137,8 @@
 		040E9916248A4931007AF099 /* MP4ExtensionForVimeo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP4ExtensionForVimeo.swift; sourceTree = "<group>"; };
 		040E991A248A4C05007AF099 /* ErrorStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStructure.swift; sourceTree = "<group>"; };
 		040E991C248A78BC007AF099 /* TableViewGenericCellsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewGenericCellsExtension.swift; sourceTree = "<group>"; };
+		04273B86249A0FC30099706B /* FocusableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextView.swift; sourceTree = "<group>"; };
+		04273B88249A1ACF0099706B /* FocusableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableLabel.swift; sourceTree = "<group>"; };
 		04369E15248FD97D0042C0C6 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		04369E192490A4500042C0C6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		04369E1C2490B0FD0042C0C6 /* VideoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 			children = (
 				04369E1C2490B0FD0042C0C6 /* VideoInfoViewController.swift */,
 				04369E1D2490B0FD0042C0C6 /* VideoInfoViewController.xib */,
+				04273B86249A0FC30099706B /* FocusableTextView.swift */,
+				04273B88249A1ACF0099706B /* FocusableLabel.swift */,
 			);
 			path = VideoInfo;
 			sourceTree = "<group>";
@@ -893,6 +899,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04273B87249A0FC30099706B /* FocusableTextView.swift in Sources */,
 				040E9918248A4A3D007AF099 /* MP4ExtensionForVimeo.swift in Sources */,
 				040E9912248A1EB8007AF099 /* HCVimeoVideoExtractor.swift in Sources */,
 				04E9DA02248FC893008D92E7 /* VideosCollectionViewController.swift in Sources */,
@@ -911,6 +918,7 @@
 				04E9C5A324961B1F005733EF /* VideoInfoInterface.swift in Sources */,
 				04369E1E2490B0FD0042C0C6 /* VideoInfoViewController.swift in Sources */,
 				04369E282490D60D0042C0C6 /* IntExtension.swift in Sources */,
+				04273B89249A1ACF0099706B /* FocusableLabel.swift in Sources */,
 				047AA644249205E000538CA1 /* ConfigurableCategoryCell.swift in Sources */,
 				040E9910248A1EB8007AF099 /* HCVimeoVideo.swift in Sources */,
 				04E9D9D3248F95EC008D92E7 /* VimeoTabbarVC.swift in Sources */,

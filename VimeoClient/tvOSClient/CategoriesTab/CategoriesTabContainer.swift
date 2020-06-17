@@ -51,10 +51,21 @@ class CategoriesTabContainer<
             switch result {
             case .success(let categories):
                 self?.tableVC.update(for: categories)
+                self?.tableVC.didSelect(category: categories.first!)
             case .failure(let err):
                 self?.handle(error: err)
             }
         }
+    }
+    
+    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
+        super.shouldUpdateFocus(in: context)
+        if context.nextFocusedView!.isDescendant(of: tabBarController!.tabBar) {
+            tabBarController?.setTabBarVisible(visible: true, duration: 0.1)
+        } else {
+            tabBarController?.setTabBarVisible(visible: false, duration: 0.1)
+        }
+        return true
     }
 }
 
