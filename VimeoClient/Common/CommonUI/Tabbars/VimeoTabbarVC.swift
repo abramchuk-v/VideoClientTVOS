@@ -12,6 +12,7 @@ class VimeoTabController: UITabBarController {
     private var focusView: UIView?
     func changeFocus(to view: UIView) {
         focusView = view
+        setNeedsFocusUpdate()
         updateFocusIfNeeded()
         focusView = nil
     }

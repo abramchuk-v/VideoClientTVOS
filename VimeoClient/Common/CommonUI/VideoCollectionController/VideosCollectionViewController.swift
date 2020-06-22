@@ -48,20 +48,23 @@ class VideosCollectionViewController
         return [collectionView]
     }
     
+//    MARK: - Colection delegate.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let video = dataSource.itemIdentifier(for: indexPath) else { return }
         didSelect(video: video)
     }
-    
+    #if os(tvOS)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         if videos.isEmpty { return CGSize.zero }
         return CGSize(width: 120, height: 120)
     }
+    #endif
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         setNeedsFocusUpdate()
     }
     
+//    MARK:- Public method.
     func setSelectionAction(handler: @escaping (Item) -> Void) {
         selectionAction = handler
     }
