@@ -18,7 +18,7 @@ class CategoriesVC
         case main
     }
     
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private(set) weak var tableView: UITableView!
     
     private var categories: [Item] = []
     private var dataSource: UITableViewDiffableDataSource<Section, Item>! = nil
@@ -47,6 +47,14 @@ class CategoriesVC
         guard let category = dataSource.itemIdentifier(for: indexPath) else { return }
         didSelect(category: category)
     }
+    
+    func indexPathForPreferredFocusedView(in tableView: UITableView) -> IndexPath? {
+        return IndexPath(row: 0, section: 0)
+    }
+    
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+        return [tableView]
+    }
 }
 
 
@@ -59,19 +67,13 @@ extension CategoriesVC {
     func update(for categories: [Item]) {
         self.categories = categories
         updateUI()
-
-//        let index = IndexPath(row: 0, section: 0)
-//        guard let firstItem = dataSource.itemIdentifier(for: index) else { return }
-//        tableView.selectRow(at: index,
-//                            animated: true,
-//                            scrollPosition: .none)
-//        didSelect(category: firstItem)
     }
 
 }
 
 private extension CategoriesVC {
     func configTable() {
+        tableView.remembersLastFocusedIndexPath = true
         tableView.register(cellClass: Cell.self)
         tableView.delegate = self
         

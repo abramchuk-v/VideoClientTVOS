@@ -42,31 +42,26 @@ class CategoriesTabContainer<
         super.viewDidLoad()
         
         collecctionVC.setSelectionAction { [weak self] in self?.didSelect($0) }
-//        collecctionVC.set
         tableVC.setSelectionAction { [weak self] in self?.didSelect(category: $0) }
         
         addChildViewControllerWithView(collecctionVC, toView: containerForVideo)
         addChildViewControllerWithView(tableVC, toView: containerForTable)
         
+        tabBarObservedScrollView = collecctionVC.collectionView
+        
         categoryDataModel.getCategories { [weak self] (result) in
+            guard let strongSelf = self else { return }
             switch result {
             case .success(let categories):
-                self?.tableVC.update(for: categories)
-                self?.tableVC.didSelect(category: categories.first!)
+                strongSelf.tableVC.update(for: categories)
+                strongSelf.tableVC.didSelect(category: categories.first!)
+            
+                (strongSelf.tabBarController as? VimeoTabController)?
+                    .changeFocus(to: strongSelf.containerForVideo)
             case .failure(let err):
-                self?.handle(error: err)
+                strongSelf.handle(error: err)
             }
         }
-    }
-    
-    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
-        super.shouldUpdateFocus(in: context)
-        if context.nextFocusedView!.isDescendant(of: tabBarController!.tabBar) {
-            tabBarController?.setTabBarVisible(visible: true, duration: 0.1)
-        } else {
-            tabBarController?.setTabBarVisible(visible: false, duration: 0.1)
-        }
-        return true
     }
 }
 
@@ -77,11 +72,12 @@ extension CategoriesTabContainer {
         
         collecctionVC.update(for: [])
         videoDataModel.videos(for: cthr) { [weak self] (result) in
+            guard let strongSelf = self else { return }
             switch result {
             case .failure(let err):
-                self?.handle(error: err)
+                strongSelf.handle(error: err)
             case .success(let videos):
-                self?.collecctionVC.update(for: videos)
+                strongSelf.collecctionVC.update(for: videos)
             }
         }
     }

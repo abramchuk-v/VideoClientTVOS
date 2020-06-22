@@ -12,13 +12,13 @@ class VideosCollectionViewController
     <
     Item: Hashable,
     Cell: ConfigurableVideoCell<Item>
-    >: UIViewController, UICollectionViewDelegate {
+    >: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     enum Section {
         case main
     }
     
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private(set) weak var collectionView: UICollectionView!
     
     private var videos: [Item] = []
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
@@ -37,12 +37,9 @@ class VideosCollectionViewController
         super.viewDidLoad()
         collectionView.remembersLastFocusedIndexPath = true
         footerAction = { [weak self] in
-            #warning("Add delay or croll throw the display link")
             self?.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
                                              at: .top,
-                                             animated: false)
-            self?.setNeedsFocusUpdate()
-            
+                                             animated: true)
         }
         configCollection()
     }
@@ -54,6 +51,15 @@ class VideosCollectionViewController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let video = dataSource.itemIdentifier(for: indexPath) else { return }
         didSelect(video: video)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if videos.isEmpty { return CGSize.zero }
+        return CGSize(width: 120, height: 120)
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        setNeedsFocusUpdate()
     }
     
     func setSelectionAction(handler: @escaping (Item) -> Void) {
